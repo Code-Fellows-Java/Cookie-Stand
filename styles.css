@@ -1,0 +1,19 @@
+
+h1 {
+  text-align: center;
+  
+} 
+.fish {
+    background-image:url("https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png");
+    background-position: 50%;
+    height: 250px;
+    background-repeat: no-repeat;
+    text-align: center;
+    margin-bottom: 50px;
+}
+body {
+    background-image: url(https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
