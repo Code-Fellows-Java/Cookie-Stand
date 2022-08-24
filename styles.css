@@ -1,8 +1,17 @@
 
 h1 {
   text-align: center;
-  
+  text-shadow: 2px 2px 4px #000000;
+  font-size: 75px;
+  font-family: 'Stick', sans-serif;
+
 } 
+h2 {
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 55px;
+    font-family: 'Stick', sans-serif;
+}
 .fish {
     background-image:url("https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png");
     background-position: 50%;
@@ -15,5 +24,26 @@ body {
     background-image: url(https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
+    text-align: center;
+    font-size: 30px;
+
+}
+p {
+    border:  rgb(80, 62, 13);
+    border-width: 5px;
+    background-color: rgb(211, 148, 11);
+    text-align: center;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    color: antiquewhite;
+    width: 40%;
+    margin: auto;
+    display: block;
+  
 }
 
