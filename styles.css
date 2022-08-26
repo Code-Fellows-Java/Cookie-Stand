@@ -94,6 +94,7 @@ header {
     outline: 2px solid black;
     background-color:rgb(228, 173, 21) ;
     padding-bottom: 15px;
+    text-align: center;
   }
   .featured-text p{
     font-size: 25px;
@@ -136,7 +137,6 @@ header {
     border-radius: 10px;
     outline: 2px solid black;
     max-width: 1200px;
-    height: 70px;
     margin: 0 auto;
     margin-top: 20px;
   }
@@ -145,4 +145,13 @@ header {
     border-radius: 50%;
     max-height: 70px;
     max-width: 200px;
+    
+  }
+  .foot-text {
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+    font-size: 30px;
   }
