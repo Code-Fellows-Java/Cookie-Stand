@@ -17,9 +17,43 @@
     }
   </style>
 </head>
+
 <body>
-  <table id="table"></table>
+  <table id="table">
+    <tfoot id="Foot">
+
+    </tfoot>
+
+  </table>
     
+  
+
+  <form id="New-Store">
+    <fieldset>
+      <legend>Create a New Store</legend>
+      <section class="input-section">
+        <label>Store Name</label>
+        <input name="Store" type="text">
+      </section>
+      <section class="input-section">
+        <label>Min. Cust.</label>
+        <input name="Min" type="number">
+      </section>
+      <section class="input-section">
+        <label>Max Cust.</label>
+        <input name="Max" type="number">
+      </section>
+      <section class="input-section">
+        <label>Avg. Sales. Per</label>
+        <input name="Cookie" type="number">
+      </section>
+      <button type="submit">Create New Store</button>
+    </fieldset>
+  </form>
+  <section>
+    <ul id="Store">
+    </ul>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>

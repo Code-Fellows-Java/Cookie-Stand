@@ -4,7 +4,7 @@
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let table = document.getElementById('table');
 let botRow = [0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
+let footer = document.getElementById('Foot');
 
 function Store(name, minCust, maxCust, avgCookieCust, openTime, closeTime) {
   this.name = name;
@@ -62,31 +62,53 @@ Store.prototype.display = function(){
   row.appendChild(totalSale);
 };
 
+let newStore = document.getElementById('New-Store');
 
-let Seattle = new Store('Seattle', 45, 102, 15.3, '6am', '7pm');
+
+newStore.addEventListener('submit', function(event){
+  event.preventDefault();
+  console.log(event.target.Store.value);
+  console.log(event.target.Min.value);
+  console.log(event.target.Max.value);
+  console.log(event.target.Cookie.value);
+
+
+
+  let X = new Store(event.target.Store.value,+event.target.Min.value,+event.target.Max.value,+event.target.Cookie.value);
+  X.randomCustomersPerHour();
+  X.display();
+
+  footer.textContent = '';
+  footerRow();
+}
+);
+
+
+let Seattle = new Store('Seattle', 23, 165, 6.3, '6am', '7pm');
 Seattle.randomCustomersPerHour();
 Seattle.display();
 console.log(Seattle);
 
-let Tokyo = new Store('Tokyo', 45, 102, 15.3, '6am', '7pm');
+let Tokyo = new Store('Tokyo', 3, 24, 1.2, '6am', '7pm');
 Tokyo.randomCustomersPerHour();
 Tokyo.display();
 console.log(Tokyo);
 
-let Dubai = new Store('Dubai', 45, 102, 15.3, '6am', '7pm');
+let Dubai = new Store('Dubai', 11, 38, 4.6, '6am', '7pm');
 Dubai.randomCustomersPerHour();
 Dubai.display();
 console.log(Dubai);
 
-let Paris = new Store('Paris', 45, 102, 15.3, '6am', '7pm');
+let Paris = new Store('Paris', 20, 38, 2.3, '6am', '7pm');
 Paris.randomCustomersPerHour();
 Paris.display();
 console.log(Paris);
 
-let Lima = new Store('Lima', 45, 102, 15.3, '6am', '7pm');
+let Lima = new Store('Lima', 2, 16, 4.6, '6am', '7pm');
 Lima.randomCustomersPerHour();
 Lima.display();
 console.log(Lima);
+
 
 
 
@@ -111,26 +133,27 @@ function display(){
   row.appendChild(totalLabel);
 }
 
-let footer = document.createElement('tr');
-table.appendChild(footer);
-let cell = document.createElement('td');
-cell.textContent = 'Total';
-footer.appendChild(cell);
-console.log(botRow);
+function footerRow (){
+  let row = document.createElement('tr');
+  footer.appendChild(row);
+  let cell = document.createElement('td');
+  cell.textContent = 'Total';
+  row.appendChild(cell);
+  console.log(botRow);
 
-for (let i =0; i < hours.length; i++){
-  let hourTD = document.createElement('td');
-  hourTD.textContent = botRow[i];
-  footer.appendChild(hourTD);
+  let finalValue =0;
+
+  for (let i =0; i < hours.length; i++){
+    let hourTD = document.createElement('td');
+    hourTD.textContent = botRow[i];
+    finalValue+= botRow[i];
+    row.appendChild(hourTD);
+  }
+  let grandTotal = document.createElement('td');
+  grandTotal.textContent = finalValue;
+  row.appendChild(grandTotal);
 }
-let grandTotal = document.createElement('td');
-
-for (let i =0; i < hours.length; i++);{
-  grandTotal = sum(botRow[0], botRow)[0];
-  footer.appendChild(grandTotal);
-};
-
-
+footerRow();
 
 
 
